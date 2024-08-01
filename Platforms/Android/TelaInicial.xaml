@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZebraPrinter.TelaInicial"
+             Title="Zebra Printer"
+             BackgroundColor="Red">
+
+    <StackLayout>
+        <Button Text="Search Devices" Clicked="OnSearchDevicesButtonClicked" />
+        <ListView x:Name="DevicesListView" ItemSelected="OnDeviceSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Id}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Connect" Clicked="OnConnectButtonClicked" />
+        <Button Text="Print" Clicked="OnPrintButtonClicked" />
+        <Button Text="Disconnect" Clicked="OnDisconnectButtonClicked" />
+        <Entry x:Name="TextToPrintEntry" Placeholder="Enter text to print" />
+    </StackLayout>
+</ContentPage>
