@@ -54,8 +54,9 @@ namespace ZebraPrinter
         {
             try
             {
-                if (_zebraPrinterService != null)
+                if (_selectedDevice != null)
                 {
+                    _zebraPrinterService = new ZebraPrinterService(_selectedDevice);
                     await _zebraPrinterService.ConnectAsync();
                     await DisplayAlert("Success", "Connected to printer.", "OK");
                 }
